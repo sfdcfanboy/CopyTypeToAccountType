@@ -1,0 +1,5 @@
+List<Account> accList = [SELECT id,type,customer_type__c FROM account WHERE type!=null LIMIT 200];
+for(account a:accList){
+    a.customer_type__c = a.type;
+}
+update accList;
